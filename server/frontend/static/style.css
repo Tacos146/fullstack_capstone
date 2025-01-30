@@ -3,6 +3,20 @@ img{
   align-self: center;
 }
 
+.img-cars {
+    max-width: 40%;
+    display: block;
+    margin: auto;
+}
+
+.img-operator {
+    max-width: 10%; /* 画面幅の50%に制限 */
+    height: auto;   /* 縦横比を維持 */
+    display: block;
+    margin: auto;
+}
+
+
 .card{
   border: rgb(103, 102, 105) 3px solid;
   display: flex;  
