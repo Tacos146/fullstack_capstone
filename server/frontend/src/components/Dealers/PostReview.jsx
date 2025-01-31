@@ -47,7 +47,7 @@ const PostReview = () => {
       "car_year": year,
     });
 
-    console.log(jsoninput);
+    console.log("JSON input is..." + jsoninput);
     const res = await fetch(review_url, {
       method: "POST",
       headers: {
@@ -56,11 +56,15 @@ const PostReview = () => {
       body: jsoninput,
   });
 
+  console.log("Response Status:", res.status);  //check response status code
   const json = await res.json();
+console.log("Server Response:", JSON.stringify(json, null, 2));
+
   if (json.status === 200) {
+        console.log(Review submitted successfully. Redirecting...");
+
       window.location.href = window.location.origin+"/dealer/"+id;
   }
-
   }
   const get_dealer = async ()=>{
     const res = await fetch(dealer_url, {
