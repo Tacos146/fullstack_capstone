@@ -1,19 +1,16 @@
-export default [
-  {
-    ignores: ["node_modules/", "dist/"], // 除外するディレクトリ
+module.exports = {
+  extends: ["eslint:recommended"],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
-  {
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-    plugins: {
-      import: require("eslint-plugin-import"),
-    },
-    rules: {
-      "no-unused-vars": "warn",
-      "no-console": "off",
-      "import/no-unresolved": "error",
-    },
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module"
   },
-];
+  rules: {
+    semi: ["error", "always"],
+    quotes: ["error", "double"]
+  }
+};
